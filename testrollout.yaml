@@ -1,10 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  labels:
-    app: blue-green2
-    app.kubernetes.io/instance: blue-green2
-    release: blue-green2
   name: blue-green2
   namespace: default
 spec:
@@ -13,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: blue-green2
-      release: blue-green2
+      release: blue-green
   strategy:
     blueGreen:
       activeService: blue-green2
