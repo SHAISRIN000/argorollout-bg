@@ -12,7 +12,7 @@ spec:
     blueGreen:
       activeService: blue-green2
       autoPromotionEnabled: false
-      previewService: blue-green1-preview
+      previewService: blue-green2-preview
   template:
       labels:
         app: blue-green2
@@ -24,7 +24,7 @@ spec:
           httpGet:
             path: /
             port: http
-        name: blue-green1
+        name: blue-green2
         ports:
         - containerPort: 80
           name: http
