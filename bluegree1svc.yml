@@ -3,7 +3,6 @@ kind: Service
 metadata:
   labels:
     app: blue-green2
-    app.kubernetes.io/instance: blue-green2
   name: blue-green2
 spec:
   ports:
