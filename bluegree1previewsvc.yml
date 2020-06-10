@@ -4,7 +4,7 @@ metadata:
   labels:
     app: blue-green2-preview
     app.kubernetes.io/instance: blue-green2-preview
-  name: blue-green1-preview
+  name: blue-green2-preview
 spec:
   ports:
   - name: http
