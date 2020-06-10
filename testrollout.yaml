@@ -14,6 +14,7 @@ spec:
     blueGreen:
       activeService: blue-green2
       previewService: blue-green2-preview
+      autoPromotionEnabled: false
   template:
     metadata:
       creationTimestamp: null
