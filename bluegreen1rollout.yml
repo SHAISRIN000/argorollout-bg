@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: blue-green1
+  name: blue-green2
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: blue-green1
+      app: blue-green2
   strategy:
     blueGreen:
-      activeService: blue-green1
+      activeService: blue-green2
       autoPromotionEnabled: false
       previewService: blue-green1-preview
   template:
       labels:
-        app: blue-green1
+        app: blue-green2
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
