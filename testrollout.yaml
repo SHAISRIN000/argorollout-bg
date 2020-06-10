@@ -34,7 +34,7 @@ spec:
           httpGet:
             path: /
             port: http
-        name: helm-guestbook
+        name: helm-guestbook1
         ports:
         - containerPort: 80
           name: http
