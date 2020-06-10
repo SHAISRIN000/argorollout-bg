@@ -2,29 +2,27 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   labels:
-    app: helm-guestbook
-    app.kubernetes.io/instance: blue-green
-    chart: helm-guestbook-0.1.0
-    heritage: Tiller
-    release: blue-green
-  name: blue-green-helm-guestbook
+    app: blue-green2
+    app.kubernetes.io/instance: blue-green2
+    release: blue-green2
+  name: blue-green2
   namespace: default
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: helm-guestbook
-      release: blue-green
+      app: blue-green2
+      release: blue-green2
   strategy:
     blueGreen:
-      activeService: blue-green-helm-guestbook
-      previewService: blue-green-helm-guestbook-preview
+      activeService: blue-green2
+      previewService: blue-green2-preview
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: helm-guestbook
+        app: blue-green2
         release: blue-green
     spec:
       containers:
@@ -34,7 +32,7 @@ spec:
           httpGet:
             path: /
             port: http
-        name: helm-guestbook1
+        name: blue-green2
         ports:
         - containerPort: 80
           name: http
